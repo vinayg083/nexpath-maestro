@@ -31,3 +31,6 @@ expo-env.d.ts
 .design-reference/
 .prettier-cache
 draftbit-component-preview.tsxNexPath-maestro-flows.zip
+
+# throwaway export artifact
+NexPath-maestro-flows.zip
