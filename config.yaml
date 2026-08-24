@@ -1,0 +1,8 @@
+# Maestro workspace config.
+# Only the numbered suite folders under .maestro are test flows. This keeps Maestro
+# from trying to parse repo config files (like .yarnrc.yml) or the helpers/ subflows
+# as standalone tests.
+flows:
+  - ".maestro/0*/**"
+  - ".maestro/1*/**"
+  - ".maestro/2*/**"

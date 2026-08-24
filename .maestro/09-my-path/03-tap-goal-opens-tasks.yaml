@@ -1,0 +1,6 @@
+# S9C3 - Tapping a goal opens its list of tasks.
+appId: ${APP_ID}
+---
+- runFlow: ../helpers/complete-onboarding.yaml
+- tapOn: "Acamedics.*"
+- extendedWaitUntil: { visible: "Undergrad.*", timeout: 15000 }

@@ -1,0 +1,7 @@
+# S19C2 - Tapping a category opens its details.
+appId: ${APP_ID}
+---
+- runFlow: ../helpers/complete-onboarding.yaml
+- tapOn: "Explore More"
+- tapOn: "Housing,.*"
+- extendedWaitUntil: { visible: "Add to My Path", timeout: 15000 }

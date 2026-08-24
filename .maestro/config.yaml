@@ -1,0 +1,6 @@
+# Only run the numbered suite flows. helpers/ are shared sub-flows (called via
+# runFlow), not standalone tests, so they are excluded here.
+flows:
+  - "0*/**"
+  - "1*/**"
+  - "2*/**"

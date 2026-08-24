@@ -1,0 +1,14 @@
+# S15C6 - Video resources go straight to the player (no intermediate action layout).
+# Acamedics / New Task, card 1 = "Students Loan Scheme" (a direct video, the only resource),
+# so entering the feed lands directly on the player. We assert the player's own control
+# "Play video" (its accessibilityLabel) — the resource title itself isn't matchable because the
+# caption Pressable's accessibilityLabel ("Expand video description") absorbs its child text.
+# No swipe needed, and Acamedics is a top-of-list goal.
+appId: ${APP_ID}
+---
+- runFlow: ../helpers/complete-onboarding.yaml
+- tapOn: "Acamedics.*"
+- tapOn: "New Task(,.*)?"
+- tapOn: "Let's Go!"
+- extendedWaitUntil: { visible: "Play video", timeout: 20000 } # player control -> we're on the player
+- assertNotVisible: "Open Website" # no website action layout

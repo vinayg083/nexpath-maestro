@@ -1,0 +1,9 @@
+# S15C7 - A task with no resources shows a message with a way out (Transportation -> Task 3).
+appId: ${APP_ID}
+---
+- runFlow: ../helpers/complete-onboarding.yaml
+- tapOn: "Transportation.*"
+- tapOn: "Task 3(,.*)?"
+- tapOn: "Let's Go!"
+- extendedWaitUntil: { visible: "No resources linked to this task yet.", timeout: 15000 }
+- assertVisible: "Close resource viewer"

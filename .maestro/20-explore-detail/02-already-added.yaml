@@ -1,0 +1,7 @@
+# S20C2 - A category already on the path opens marked "Added to My Path".
+appId: ${APP_ID}
+---
+- runFlow: ../helpers/complete-onboarding.yaml
+- tapOn: "Explore More"
+- tapOn: "Acamedics,.*"
+- assertVisible: "Added to My Path"

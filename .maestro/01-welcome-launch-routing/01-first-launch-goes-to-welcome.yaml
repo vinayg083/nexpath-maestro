@@ -1,0 +1,12 @@
+# Suite 1 / Case 1 - First launch goes to Welcome.
+appId: ${APP_ID}
+---
+- launchApp: { clearState: true }
+- extendedWaitUntil:
+    visible: "Reentry Roadmap"
+    timeout: 30000
+- assertVisible: "Let's Go!"
+- assertVisible: ".*Explain what the app is.*"  # intro message (wrapped in quotes)
+- assertNotVisible: "Go back"                   # no back button
+- tapOn: "Let's Go!"
+- assertVisible: "Tell us about yourself"       # first onboarding step

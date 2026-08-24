@@ -1,0 +1,16 @@
+# Setup: through Step 2, pick two real goals, continue to Step 3.
+appId: ${APP_ID}
+---
+- runFlow: reach-step2.yaml
+# Wait for the category grid to settle (the load effect resets selection on resolve).
+- assertVisible: "Acamedics"
+- waitForAnimationToEnd: { timeout: 5000 }
+- tapOn: "Acamedics"
+# 11 goals now; Transportation is the last tile, below the fold.
+- scrollUntilVisible:
+    element:
+      text: "Transportation"
+    direction: DOWN
+- tapOn: "Transportation"
+- tapOn: "Next"
+- extendedWaitUntil: { visible: "Need immediate help?", timeout: 20000 }

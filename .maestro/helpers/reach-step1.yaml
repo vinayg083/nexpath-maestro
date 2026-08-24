@@ -1,0 +1,7 @@
+# Setup: fresh launch (new anonymous user) -> Welcome -> Onboarding Step 1.
+appId: ${APP_ID}
+---
+- launchApp: { clearState: true }
+- extendedWaitUntil: { visible: "Reentry Roadmap", timeout: 40000 }
+- tapOn: "Let's Go!"
+- extendedWaitUntil: { visible: "Tell us about yourself", timeout: 20000 }

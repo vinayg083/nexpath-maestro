@@ -1,0 +1,6 @@
+# S22C7 - The More tab only has one option today ("Delete account").
+appId: ${APP_ID}
+---
+- runFlow: ../helpers/complete-onboarding.yaml
+- tapOn: "More(, tab.*)?"
+- assertVisible: "Delete account"

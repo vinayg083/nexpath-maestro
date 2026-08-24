@@ -1,0 +1,12 @@
+# S13C2 - Undoing a completed task asks you to confirm first.
+appId: ${APP_ID}
+---
+- runFlow: ../helpers/complete-onboarding.yaml
+- tapOn: "Acamedics.*"
+- tapOn: "Undergrad.*"
+- tapOn: "Mark as completed"
+- extendedWaitUntil: { visible: "Acamedics", timeout: 15000 }
+- tapOn: "Undergrad.*"
+- extendedWaitUntil: { visible: "Completed", timeout: 15000 }
+- tapOn: "Completed"
+- assertVisible: "Mark task incomplete?"

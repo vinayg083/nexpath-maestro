@@ -1,0 +1,21 @@
+# Setup: fresh -> Step 1 filled -> Step 2 "Get Started".
+# Birthdate: picker opens on a valid default (January / current-year-18); Done commits it.
+# State: California (no local areas). The dropdown options are NOT text-addressable -
+# they collapse into one accessibility node - so California is tapped by COORDINATE
+# (~6th row when the list opens fresh). Coordinates are position-based; re-calibrate
+# if the layout changes. After the tap, the trigger shows "California" (addressable).
+appId: ${APP_ID}
+---
+- runFlow: reach-step1.yaml
+- tapOn: "Month"
+- tapOn: "Done"
+- tapOn: "Select a state"
+- tapOn: "California"
+- assertVisible: "California"
+# "How long have you been in the community?" is now REQUIRED (see helper notes).
+- tapOn:
+    below: "How long have you been in the community?"
+- tapOn: "Less than one week"
+- assertVisible: "Less than one week"
+- tapOn: "Next"
+- extendedWaitUntil: { visible: "Get Started", timeout: 20000 }

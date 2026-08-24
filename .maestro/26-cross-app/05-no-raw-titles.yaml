@@ -1,0 +1,9 @@
+# S26C5 - No screen ever shows a raw, unfinished title.
+appId: ${APP_ID}
+---
+- runFlow: ../helpers/complete-onboarding.yaml
+- assertVisible: "My Path"
+- assertNotVisible: "(tabs)"
+- assertNotVisible: "myPathScreen"
+- tapOn: "Explore More"
+- assertNotVisible: "explore"

@@ -1,0 +1,21 @@
+# S21C1 - Adding an appointment with a reminder saves it correctly.
+appId: ${APP_ID}
+---
+- runFlow: ../helpers/complete-onboarding.yaml
+- tapOn: "Calendar(, tab.*)?"
+- tapOn: "Add appointment"
+- extendedWaitUntil: { visible: "Create Appointment", timeout: 15000 }
+- tapOn: "Name"
+- inputText: "Probation Meeting"
+- hideKeyboard
+- tapOn: "Appointment date"
+- extendedWaitUntil: { visible: "Select date", timeout: 8000 }
+- tapOn: "Next"
+- tapOn: "20"
+- tapOn: "Done"
+- tapOn: "Appointment time"
+- extendedWaitUntil: { visible: "Select time", timeout: 8000 }
+- tapOn: "Done"
+- tapOn: "Reminder"
+- tapOn: "Add"
+- extendedWaitUntil: { visible: "Probation Meeting", timeout: 15000 }

@@ -1,0 +1,10 @@
+# S26C7 - Your account stays signed in across repeated app restarts.
+appId: ${APP_ID}
+---
+- runFlow: ../helpers/complete-onboarding.yaml
+- stopApp
+- launchApp
+- extendedWaitUntil: { visible: "My Path", timeout: 30000 }
+- stopApp
+- launchApp
+- extendedWaitUntil: { visible: "My Path", timeout: 30000 }

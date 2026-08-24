@@ -1,0 +1,6 @@
+# Auto-written by setup-maestro.sh. Please verify.
+appId: com.draftbitbuildservices.newapp
+testCases: /Users/vinaykumar/play/draftbit/NexPath-test/../NexPath-expectations-2026-08-05.json
+modules: all        # 'all', one name (onboarding), or a list [onboarding, resources]
+output: .maestro
+useMaestroMcp: true  # use the Maestro MCP to confirm tricky selectors (must also be connected via /mcp)

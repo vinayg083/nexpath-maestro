@@ -1,0 +1,13 @@
+# S26C1 - The single most valuable run: onboarding all the way through completing a task.
+appId: ${APP_ID}
+---
+- runFlow: ../helpers/complete-onboarding.yaml
+- assertVisible: "My Path"
+- tapOn: "Acamedics.*"
+- extendedWaitUntil: { visible: "Undergrad.*", timeout: 15000 }
+- tapOn: "Undergrad.*"
+- extendedWaitUntil: { visible: "Mark as completed", timeout: 15000 }
+- tapOn: "Mark as completed"
+- extendedWaitUntil: { visible: "Acamedics", timeout: 15000 }
+- tapOn: "Undergrad.*"
+- assertVisible: "Completed"

@@ -1,0 +1,7 @@
+# S4C3 - Get Started (Onboarding Step 2 title).
+appId: ${APP_ID}
+---
+- runFlow: ../helpers/reach-step2.yaml
+- assertVisible: "Get Started"
+- assertVisible: "It's OK to pick anything even if you are not sure if it applies to you. We'll help you figure that out later."
+- assertVisible: "Step 2 of 3"

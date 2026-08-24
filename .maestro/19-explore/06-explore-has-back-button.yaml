@@ -1,0 +1,6 @@
+# S19C6 - Explore has a back button since it's reached from My Path.
+appId: ${APP_ID}
+---
+- runFlow: ../helpers/complete-onboarding.yaml
+- tapOn: "Explore More"
+- extendedWaitUntil: { visible: "Go back", timeout: 15000 }

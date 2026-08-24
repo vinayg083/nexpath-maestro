@@ -1,0 +1,7 @@
+# S18C7 - Resources has no back button, like the other main tabs.
+appId: ${APP_ID}
+---
+- runFlow: ../helpers/complete-onboarding.yaml
+- tapOn: "Resources(, tab.*)?"
+- assertVisible: "Nexpath"
+- assertNotVisible: "Go back"

@@ -1,0 +1,9 @@
+# S5C3 - Next is blocked if nothing is picked.
+appId: ${APP_ID}
+---
+- runFlow: ../helpers/reach-step2.yaml
+# Wait for categories to finish loading — Next is disabled while loading, so tapping
+# too early is a no-op and no validation fires.
+- assertVisible: "Acamedics"
+- tapOn: "Next"
+- assertVisible: "Select at least 1 area to continue."

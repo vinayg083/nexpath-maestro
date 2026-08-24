@@ -1,0 +1,6 @@
+# S6C3 - This screen shows help info, not goal content.
+appId: ${APP_ID}
+---
+- runFlow: ../helpers/reach-step3.yaml
+- assertVisible: "Need immediate help?"
+- assertVisible: "If you need immediate help finding food, housing, health, or other emergency assistance, local support resources can help."

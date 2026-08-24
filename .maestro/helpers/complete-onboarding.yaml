@@ -1,0 +1,10 @@
+# Setup: end up on My Path, from a CLEAN state.
+# Clears state first so onboarding always runs fresh on a new anon user. (Reusing a
+# prior anon user pre-loads its saved goal priorities into Step 2, and the goal taps
+# then toggle them OFF, leaving 0 selected — so a fresh user is required.)
+appId: ${APP_ID}
+---
+- launchApp: { clearState: true }
+- extendedWaitUntil: { visible: "Reentry Roadmap", timeout: 40000 }
+- runFlow: do-onboarding-from-welcome.yaml
+- assertVisible: "My Path"

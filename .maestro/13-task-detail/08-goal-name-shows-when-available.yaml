@@ -1,0 +1,8 @@
+# S13C8 - The goal name shows above the task title when available.
+appId: ${APP_ID}
+---
+- runFlow: ../helpers/complete-onboarding.yaml
+- tapOn: "Acamedics.*"
+- tapOn: "Undergrad.*"
+- assertVisible: "Acamedics"
+- assertVisible: "Undergrad"

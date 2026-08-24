@@ -1,0 +1,8 @@
+# Suite 1 / Case 6 - Welcome has no back navigation.
+appId: ${APP_ID}
+---
+- launchApp: { clearState: true }
+- extendedWaitUntil:
+    visible: "Reentry Roadmap"
+    timeout: 30000
+- assertNotVisible: "Go back"   # NexPathHeader back control is absent on Welcome

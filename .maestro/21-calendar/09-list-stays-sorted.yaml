@@ -1,0 +1,37 @@
+# S21C9 - The appointment list stays sorted by date. Create a later date first,
+# then an earlier one; the earlier one should sit above the later one.
+appId: ${APP_ID}
+---
+- runFlow: ../helpers/complete-onboarding.yaml
+- tapOn: "Calendar(, tab.*)?"
+# later appointment (day 25)
+- tapOn: "Add appointment"
+- extendedWaitUntil: { visible: "Create Appointment", timeout: 15000 }
+- tapOn: "Name"
+- inputText: "Later Meeting"
+- hideKeyboard
+- tapOn: "Appointment date"
+- tapOn: "Next"
+- tapOn: "25"
+- tapOn: "Done"
+- tapOn: "Appointment time"
+- tapOn: "Done"
+- tapOn: "Add"
+- extendedWaitUntil: { visible: "Later Meeting", timeout: 15000 }
+# earlier appointment (day 10)
+- tapOn: "Add appointment"
+- extendedWaitUntil: { visible: "Create Appointment", timeout: 15000 }
+- tapOn: "Name"
+- inputText: "Earlier Meeting"
+- hideKeyboard
+- tapOn: "Appointment date"
+- tapOn: "Next"
+- tapOn: "10"
+- tapOn: "Done"
+- tapOn: "Appointment time"
+- tapOn: "Done"
+- tapOn: "Add"
+- extendedWaitUntil: { visible: "Earlier Meeting", timeout: 15000 }
+- assertVisible:
+    text: "Earlier Meeting"
+    above: "Later Meeting"

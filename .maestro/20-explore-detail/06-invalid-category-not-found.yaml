@@ -1,0 +1,8 @@
+# S20C6 - An invalid category (bad deep link) shows a not-found message, not a crash.
+appId: ${APP_ID}
+---
+- launchApp: { clearState: true }
+- extendedWaitUntil: { visible: "Reentry Roadmap", timeout: 45000 }
+- openLink: "nexpath:///explore/00000000-0000-0000-0000-000000000000"
+- tapOn: { text: "Open", optional: true }
+- extendedWaitUntil: { visible: "This roadmap item could not be found.", timeout: 15000 }

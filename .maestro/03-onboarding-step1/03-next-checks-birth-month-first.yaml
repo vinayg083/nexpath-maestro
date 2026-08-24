@@ -1,0 +1,10 @@
+# Suite 3 / Case 3 - Next checks birth month first (one at a time).
+# Automatable portion: pressing Next with nothing filled surfaces the birth
+# month prompt. The follow-on "birth year" prompt is not automatable here -
+# the birthdate picker commits month AND year together on Done, so a
+# month-set / year-unset state cannot be produced from the UI. See report.
+appId: ${APP_ID}
+---
+- runFlow: ../helpers/reach-step1.yaml
+- tapOn: "Next"
+- assertVisible: "Select your birth month."

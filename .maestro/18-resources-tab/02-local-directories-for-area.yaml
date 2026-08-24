@@ -1,0 +1,15 @@
+# S18C2 - Local directories show for the profile's area (California).
+appId: ${APP_ID}
+---
+- runFlow: ../helpers/complete-onboarding.yaml
+- tapOn: "Resources(, tab.*)?"
+# The directory card is a Pressable with accessibilityLabel "Open <name>" and role=link, so iOS
+# exposes the whole card as ONE element labeled "Open California Reentry Resource Directory" —
+# the inner title Text is not matchable on its own. Scroll to and assert that label (which also
+# guarantees the card itself is on screen, not just the section heading above it).
+- scrollUntilVisible:
+    element:
+      text: "Open California Reentry Resource Directory"
+    direction: DOWN
+    timeout: 20000
+- assertVisible: "Open California Reentry Resource Directory"

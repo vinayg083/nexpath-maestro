@@ -1,0 +1,8 @@
+# S13C6 - "Let's Go!" opens the task's resources (Undergrad -> hotline "Call 1234").
+appId: ${APP_ID}
+---
+- runFlow: ../helpers/complete-onboarding.yaml
+- tapOn: "Acamedics.*"
+- tapOn: "Undergrad.*"
+- tapOn: "Let's Go!"
+- extendedWaitUntil: { visible: "Call 1234", timeout: 15000 }

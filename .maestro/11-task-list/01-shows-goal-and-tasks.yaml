@@ -1,0 +1,7 @@
+# S11C1 - The task list shows the goal's name and its tasks.
+appId: ${APP_ID}
+---
+- runFlow: ../helpers/complete-onboarding.yaml
+- tapOn: "Acamedics.*"
+- extendedWaitUntil: { visible: "Undergrad.*", timeout: 15000 }
+- assertVisible: "Acamedics"

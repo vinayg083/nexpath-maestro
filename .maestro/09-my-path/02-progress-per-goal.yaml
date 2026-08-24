@@ -1,0 +1,8 @@
+# S9C2 - A path with goals shows each goal with its progress status.
+appId: ${APP_ID}
+---
+- runFlow: ../helpers/complete-onboarding.yaml
+- assertVisible: "My Path"
+- assertVisible: "Acamedics.*"
+- assertVisible: "Transportation.*"
+- assertVisible: ".*Getting going.*"

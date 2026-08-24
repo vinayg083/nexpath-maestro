@@ -1,0 +1,8 @@
+# S7C3 - Every screen has a real, readable title (no raw route names).
+appId: ${APP_ID}
+---
+- runFlow: ../helpers/complete-onboarding.yaml
+- assertVisible: "My Path"
+- assertVisible: "Nexpath"
+- assertNotVisible: "myPathScreen"
+- assertNotVisible: "(tabs)"

@@ -1,0 +1,37 @@
+# Fragment: run the whole onboarding starting from the Welcome screen.
+# Assumes the app is already launched and showing Welcome (no launchApp here).
+# Picks California (by coordinate) + goals Acamedics & Transportation.
+appId: ${APP_ID}
+---
+- tapOn: "Let's Go!"
+- extendedWaitUntil: { visible: "Tell us about yourself", timeout: 20000 }
+- tapOn: "Month"
+- tapOn: "Done"
+- tapOn: "Select a state"
+- tapOn: "California"
+- assertVisible: "California"
+# "How long have you been in the community?" is now REQUIRED. The trigger has no
+# text, so open it via the label above it; options are a Select (not text-addressable
+# on iOS) so pick the first by coordinate. Trigger then shows the picked value.
+- tapOn:
+    below: "How long have you been in the community?"
+- tapOn: "Less than one week"
+- assertVisible: "Less than one week"
+- tapOn: "Next"
+- extendedWaitUntil: { visible: "Get Started", timeout: 20000 }
+# Categories load async AFTER the title; the load effect resets the selection when it
+# resolves, so a tap made mid-load gets wiped. Wait for the grid to settle first.
+- assertVisible: "Acamedics"
+- waitForAnimationToEnd: { timeout: 5000 }
+- tapOn: "Acamedics"
+# The category grid now has 11 goals; Transportation is the last tile and starts
+# below the fold, so scroll it into view before tapping.
+- scrollUntilVisible:
+    element:
+      text: "Transportation"
+    direction: DOWN
+- tapOn: "Transportation"
+- tapOn: "Next"
+- extendedWaitUntil: { visible: "Need immediate help?", timeout: 20000 }
+- tapOn: "Finish"
+- extendedWaitUntil: { visible: "My Path", timeout: 25000 }

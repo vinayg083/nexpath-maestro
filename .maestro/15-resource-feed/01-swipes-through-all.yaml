@@ -1,0 +1,13 @@
+# S15C1 - The resource feed swipes through every resource in order.
+# Undergrad has four: Career Help, Call for help, Affordable Housing Finder, Build a business.
+appId: ${APP_ID}
+---
+- runFlow: ../helpers/complete-onboarding.yaml
+- tapOn: "Acamedics.*"
+- tapOn: "Undergrad.*"
+- tapOn: "Let's Go!"
+- extendedWaitUntil: { visible: "Career Help", timeout: 15000 }
+- swipe: { direction: UP }
+- swipe: { direction: UP }
+- swipe: { direction: UP }
+- assertVisible: "Build a business"

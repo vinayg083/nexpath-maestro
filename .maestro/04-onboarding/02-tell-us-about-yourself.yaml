@@ -1,0 +1,10 @@
+# Suite 4 / Case 2 - Tell us about yourself (Onboarding Step 1 content).
+appId: ${APP_ID}
+---
+- runFlow: ../helpers/reach-step1.yaml
+- assertVisible: "Tell us about yourself"
+- assertVisible: "We'll make sure to give you resources based on this information."
+- assertVisible: "When were you born"
+- assertVisible: "What state will you be living in?"
+- assertVisible: "How long have you been in the community?"
+- assertVisible: "Next"

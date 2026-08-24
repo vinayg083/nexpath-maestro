@@ -1,0 +1,8 @@
+# S20C1 - Adding a category saves it and the button flips to "Added to My Path".
+appId: ${APP_ID}
+---
+- runFlow: ../helpers/complete-onboarding.yaml
+- tapOn: "Explore More"
+- tapOn: "Housing,.*"
+- tapOn: "Add to My Path"
+- extendedWaitUntil: { visible: "Added to My Path", timeout: 15000 }

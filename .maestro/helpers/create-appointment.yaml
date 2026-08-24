@@ -1,0 +1,22 @@
+# Setup: onboarded -> Calendar -> create an appointment titled "Court Date".
+# Date picker day cells are addressable (1..31) + Next/Prev month + Done; the time
+# picker commits a valid default on Done. "Next" month + day 15 = a future date.
+appId: ${APP_ID}
+---
+- runFlow: complete-onboarding.yaml
+- tapOn: "Calendar(, tab.*)?"
+- tapOn: "Add appointment"
+- extendedWaitUntil: { visible: "Create Appointment", timeout: 15000 }
+- tapOn: "Name"
+- inputText: "Court Date"
+- hideKeyboard
+- tapOn: "Appointment date"
+- extendedWaitUntil: { visible: "Select date", timeout: 8000 }
+- tapOn: "Next"
+- tapOn: "15"
+- tapOn: "Done"
+- tapOn: "Appointment time"
+- extendedWaitUntil: { visible: "Select time", timeout: 8000 }
+- tapOn: "Done"
+- tapOn: "Add"
+- extendedWaitUntil: { visible: "Court Date", timeout: 15000 }

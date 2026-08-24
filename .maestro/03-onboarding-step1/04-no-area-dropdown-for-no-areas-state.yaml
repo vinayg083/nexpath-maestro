@@ -1,0 +1,9 @@
+# S3C4 - No area dropdown for a state without local areas (California).
+# State dropdown options are not text-addressable -> California tapped by coordinate.
+appId: ${APP_ID}
+---
+- runFlow: ../helpers/reach-step1.yaml
+- tapOn: "Select a state"
+- tapOn: "California"
+- assertVisible: "California"
+- assertNotVisible: "Select an area"

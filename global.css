@@ -1,0 +1,77 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+  background-color: #ffffff;
+}
+
+@layer components {
+  .text-h1 {
+    font-size: 32px;
+    font-family: Poppins_700Bold;
+  }
+
+  .text-h2 {
+    font-size: 24px;
+    font-family: Poppins_700Bold;
+  }
+
+  .text-h3 {
+    font-size: 20px;
+    font-family: Poppins_600SemiBold;
+  }
+
+  .text-h4 {
+    font-size: 18px;
+    font-family: Poppins_600SemiBold;
+  }
+
+  .text-h5 {
+    font-size: 16px;
+    font-family: Poppins_500Medium;
+  }
+
+  .text-h6 {
+    font-size: 14px;
+    font-family: Poppins_500Medium;
+  }
+
+  .text-body {
+    font-size: 16px;
+    font-family: Poppins_400Regular;
+  }
+
+  .text-caption {
+    font-size: 12px;
+    font-family: Poppins_300Light;
+  }
+
+  .text-button {
+    font-size: 16px;
+    font-family: Poppins_500Medium;
+  }
+}
+
+@layer utilities {
+  .font-light {
+    font-family: Poppins_300Light;
+  }
+
+  .font-normal {
+    font-family: Poppins_400Regular;
+  }
+
+  .font-medium {
+    font-family: Poppins_500Medium;
+  }
+
+  .font-semibold {
+    font-family: Poppins_600SemiBold;
+  }
+
+  .font-bold {
+    font-family: Poppins_700Bold;
+  }
+}

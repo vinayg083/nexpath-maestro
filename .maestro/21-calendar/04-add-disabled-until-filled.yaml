@@ -1,0 +1,10 @@
+# S21C4 - Add stays disabled until all fields are filled in.
+appId: ${APP_ID}
+---
+- runFlow: ../helpers/complete-onboarding.yaml
+- tapOn: "Calendar(, tab.*)?"
+- tapOn: "Add appointment"
+- extendedWaitUntil: { visible: "Create Appointment", timeout: 15000 }
+- assertVisible:
+    text: "Add"
+    enabled: false

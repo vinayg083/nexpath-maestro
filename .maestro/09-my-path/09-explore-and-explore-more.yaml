@@ -1,0 +1,7 @@
+# S9C9 - With goals on the path, the CTA reads "Explore More" and opens Explore.
+appId: ${APP_ID}
+---
+- runFlow: ../helpers/complete-onboarding.yaml
+- assertVisible: "Explore More"
+- tapOn: "Explore More"
+- extendedWaitUntil: { visible: "Go back", timeout: 15000 }

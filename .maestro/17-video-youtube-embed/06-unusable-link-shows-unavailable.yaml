@@ -1,0 +1,24 @@
+# S17C6 - An unusable YouTube link shows "Video unavailable", not a broken player.
+# The invalid-YouTube resource ("cleaerer", url https://https.youtube.com/) is only linked to
+# Transportation / Task 1, as the LAST card (5/5). Feed order:
+#   1/5 website, 2/5 YouTube video, 3/5 text, 4/5 direct video, 5/5 invalid YouTube.
+# We swipe up card-by-card, waiting for each page counter before the next swipe — a video
+# page can otherwise absorb a swipe fired while it's still settling.
+appId: ${APP_ID}
+---
+- runFlow: ../helpers/complete-onboarding.yaml
+- tapOn: "Transportation.*"
+- tapOn: "Task 1(,.*)?"
+- tapOn: "Let's Go!"
+# Swipe on the LEFT edge (x=8%), clear of the centered play button and the bottom scrubber, so
+# a video page can't absorb the paging gesture. Wait for each page counter before the next swipe.
+- extendedWaitUntil: { visible: "Open Website", timeout: 15000 } # 1/5 website
+- swipe: { start: "8%, 62%", end: "8%, 22%" }
+- extendedWaitUntil: { visible: "2 / 5", timeout: 10000 }
+- swipe: { start: "8%, 62%", end: "8%, 22%" }
+- extendedWaitUntil: { visible: "3 / 5", timeout: 10000 }
+- swipe: { start: "8%, 62%", end: "8%, 22%" }
+- extendedWaitUntil: { visible: "4 / 5", timeout: 10000 }
+- swipe: { start: "8%, 62%", end: "8%, 22%" }
+- extendedWaitUntil: { visible: "5 / 5", timeout: 10000 }
+- extendedWaitUntil: { visible: "Video unavailable", timeout: 15000 }

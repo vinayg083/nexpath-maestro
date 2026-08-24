@@ -1,0 +1,5 @@
+# S6C1 - Finish completes onboarding and opens My Path.
+appId: ${APP_ID}
+---
+- runFlow: ../helpers/complete-onboarding.yaml
+- assertVisible: "My Path"

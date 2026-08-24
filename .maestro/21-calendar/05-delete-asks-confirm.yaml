@@ -1,0 +1,7 @@
+# S21C5 - Deleting an appointment asks for confirmation first.
+appId: ${APP_ID}
+---
+- runFlow: ../helpers/create-appointment.yaml
+- tapOn: "Delete Court Date"
+- assertVisible: "Delete reminder?"
+- assertVisible: ".*cannot be undone.*"

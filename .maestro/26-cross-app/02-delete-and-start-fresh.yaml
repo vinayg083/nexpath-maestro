@@ -1,0 +1,12 @@
+# S26C2 - Deleting your account and starting fresh right after works cleanly.
+appId: ${APP_ID}
+---
+- runFlow: ../helpers/complete-onboarding.yaml
+- tapOn: "More(, tab.*)?"
+- tapOn: "Delete account"
+- extendedWaitUntil: { visible: "Delete account?", timeout: 10000 }
+- tapOn: "Delete"
+- extendedWaitUntil: { visible: "Reentry Roadmap", timeout: 30000 }
+- launchApp: { clearState: true }
+- runFlow: ../helpers/do-onboarding-from-welcome.yaml
+- assertVisible: "My Path"

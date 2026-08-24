@@ -1,0 +1,6 @@
+# S18C1 - Resources are grouped by category ("Important Documents" is one).
+appId: ${APP_ID}
+---
+- runFlow: ../helpers/complete-onboarding.yaml
+- tapOn: "Resources(, tab.*)?"
+- extendedWaitUntil: { visible: "Important Documents", timeout: 20000 }

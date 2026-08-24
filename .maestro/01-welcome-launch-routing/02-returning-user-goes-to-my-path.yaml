@@ -1,0 +1,8 @@
+# S1C2 - Returning user skips straight to My Path.
+appId: ${APP_ID}
+---
+- runFlow: ../helpers/complete-onboarding.yaml
+- stopApp
+- launchApp
+- extendedWaitUntil: { visible: "My Path", timeout: 30000 }
+- assertNotVisible: "Reentry Roadmap"

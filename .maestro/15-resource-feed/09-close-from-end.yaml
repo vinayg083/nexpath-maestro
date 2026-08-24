@@ -1,0 +1,11 @@
+# S15C9 - Closing the resource viewer takes you back to the task.
+appId: ${APP_ID}
+---
+- runFlow: ../helpers/complete-onboarding.yaml
+- tapOn: "Acamedics.*"
+- tapOn: "Undergrad.*"
+- tapOn: "Let's Go!"
+- extendedWaitUntil: { visible: "Career Help", timeout: 15000 }
+- tapOn: { id: "Close resource viewer", optional: true }
+- tapOn: { text: "Close resource viewer", optional: true }
+- extendedWaitUntil: { visible: "Undergrad", timeout: 15000 }

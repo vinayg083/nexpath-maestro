@@ -1,0 +1,5 @@
+# S21C2 - Adding an appointment without a reminder saves it and shows on the list.
+appId: ${APP_ID}
+---
+- runFlow: ../helpers/create-appointment.yaml
+- assertVisible: "Court Date"

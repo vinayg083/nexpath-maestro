@@ -1,0 +1,19 @@
+# S11C3 - A goal with no tasks shows a clear empty message.
+# In the current data, "Housing & Accommodation" has zero tasks (Housing now has one).
+appId: ${APP_ID}
+---
+- runFlow: ../helpers/reach-step2.yaml
+- assertVisible: "Acamedics"
+- waitForAnimationToEnd: { timeout: 5000 }
+- scrollUntilVisible:
+    element:
+      text: "Housing & Accommodation"
+    direction: DOWN
+- tapOn: "Housing & Accommodation"
+- tapOn: "Next"
+- extendedWaitUntil: { visible: "Need immediate help?", timeout: 20000 }
+- tapOn: "Finish"
+- extendedWaitUntil: { visible: "My Path", timeout: 20000 }
+# My Path goal row merges name + status, so match a partial pattern.
+- tapOn: "Housing & Accommodation.*"
+- assertVisible: "There are no tasks for this category yet."

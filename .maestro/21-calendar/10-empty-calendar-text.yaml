@@ -1,0 +1,6 @@
+# S21C10 - An empty calendar shows helpful example text (fresh account).
+appId: ${APP_ID}
+---
+- runFlow: ../helpers/complete-onboarding.yaml
+- tapOn: "Calendar(, tab.*)?"
+- assertVisible: "There is nothing on your calendar. Add important reminders and appointments here like probation meetings, court dates, etc.."

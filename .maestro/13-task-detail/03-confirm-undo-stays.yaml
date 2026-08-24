@@ -1,0 +1,13 @@
+# S13C3 - Confirming the undo keeps you on the same screen.
+appId: ${APP_ID}
+---
+- runFlow: ../helpers/complete-onboarding.yaml
+- tapOn: "Acamedics.*"
+- tapOn: "Undergrad.*"
+- tapOn: "Mark as completed"
+- extendedWaitUntil: { visible: "Acamedics", timeout: 15000 }
+- tapOn: "Undergrad.*"
+- tapOn: "Completed"
+- assertVisible: "Mark task incomplete?"
+- tapOn: "Mark incomplete"
+- assertVisible: "Undergrad"

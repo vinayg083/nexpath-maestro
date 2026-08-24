@@ -1,0 +1,14 @@
+# S7C1 - All four tabs open without errors.
+appId: ${APP_ID}
+---
+- runFlow: ../helpers/complete-onboarding.yaml
+- assertVisible: "My Path"
+- waitForAnimationToEnd: { timeout: 5000 }
+- tapOn: "Resources(, tab.*)?"
+- assertVisible: "Nexpath"
+- tapOn: "Calendar(, tab.*)?"
+- assertVisible: "Nexpath"
+- tapOn: "More(, tab.*)?"
+- assertVisible: "Delete account"
+- tapOn: "MyPath(, tab.*)?"
+- assertVisible: "My Path"

@@ -1,0 +1,9 @@
+# S22C1 - Confirming account deletion clears everything and returns to Welcome.
+appId: ${APP_ID}
+---
+- runFlow: ../helpers/complete-onboarding.yaml
+- tapOn: "More(, tab.*)?"
+- tapOn: "Delete account"
+- extendedWaitUntil: { visible: "Delete account?", timeout: 10000 }
+- tapOn: "Delete"
+- extendedWaitUntil: { visible: "Reentry Roadmap", timeout: 30000 }

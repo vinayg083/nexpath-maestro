@@ -1,0 +1,7 @@
+# S13C5 - The task shows its description (Undergrad subtitle "High school").
+appId: ${APP_ID}
+---
+- runFlow: ../helpers/complete-onboarding.yaml
+- tapOn: "Acamedics.*"
+- tapOn: "Undergrad.*"
+- assertVisible: ".*highschool.*"

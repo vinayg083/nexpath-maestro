@@ -1,0 +1,8 @@
+# S26C6 - Anything that can't be undone asks for confirmation first (account delete).
+appId: ${APP_ID}
+---
+- runFlow: ../helpers/complete-onboarding.yaml
+- tapOn: "More(, tab.*)?"
+- tapOn: "Delete account"
+- assertVisible: "Delete account?"
+- assertVisible: ".*cannot be undone.*"

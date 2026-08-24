@@ -1,0 +1,8 @@
+# S15C3 - Hotline resource shows a call button (Undergrad, first resource "Call 1234").
+appId: ${APP_ID}
+---
+- runFlow: ../helpers/complete-onboarding.yaml
+- tapOn: "Acamedics.*"
+- tapOn: "Undergrad.*"
+- tapOn: "Let's Go!"
+- extendedWaitUntil: { visible: "Call 1234", timeout: 15000 }

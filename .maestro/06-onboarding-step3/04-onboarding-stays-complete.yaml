@@ -1,0 +1,8 @@
+# S6C4 - Onboarding stays marked complete on the next app open.
+appId: ${APP_ID}
+---
+- runFlow: ../helpers/complete-onboarding.yaml
+- stopApp
+- launchApp
+- extendedWaitUntil: { visible: "My Path", timeout: 30000 }
+- assertNotVisible: "Reentry Roadmap"

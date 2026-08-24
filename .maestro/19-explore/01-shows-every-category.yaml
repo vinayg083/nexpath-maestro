@@ -1,0 +1,7 @@
+# S19C1 - Explore shows categories (including ones already on the path).
+appId: ${APP_ID}
+---
+- runFlow: ../helpers/complete-onboarding.yaml
+- tapOn: "Explore More"
+- extendedWaitUntil: { visible: "Housing.*", timeout: 20000 }
+- assertVisible: "Acamedics.*"

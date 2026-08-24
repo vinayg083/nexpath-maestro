@@ -1,0 +1,7 @@
+# S11C2 - Tapping a task opens its details.
+appId: ${APP_ID}
+---
+- runFlow: ../helpers/complete-onboarding.yaml
+- tapOn: "Acamedics.*"
+- tapOn: "Undergrad.*"
+- extendedWaitUntil: { visible: "Let's Go!", timeout: 15000 }

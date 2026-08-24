@@ -1,0 +1,8 @@
+# S7C4 - Back button only shows up where it makes sense.
+# Main tabs: no back. Explore (pushed from My Path): has back.
+appId: ${APP_ID}
+---
+- runFlow: ../helpers/complete-onboarding.yaml
+- assertNotVisible: "Go back"
+- tapOn: "Explore More"
+- extendedWaitUntil: { visible: "Go back", timeout: 15000 }

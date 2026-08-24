@@ -1,0 +1,17 @@
+# S15C5 - Text-only resources never show an action button.
+# Transportation / Task 1 feed order: 0 Affordable Housing Finder (website),
+# 1 Video Player (video), 2 Federal Student (TEXT). Swipe up twice to the text card:
+# it shows the title + description but NO "Open Website" / "Call" action button.
+# NOTE: swiping crosses the video card (card 1); if its player captures the swipe on a
+# device, lengthen the swipe. Verify the gesture on iOS.
+appId: ${APP_ID}
+---
+- runFlow: ../helpers/complete-onboarding.yaml
+- tapOn: "Transportation.*"
+- tapOn: "Task 1(,.*)?"
+- tapOn: "Let's Go!"
+- extendedWaitUntil: { visible: "Open Website", timeout: 15000 } # card 0 (website)
+- swipe: { direction: UP } # -> card 1 (video)
+- swipe: { direction: UP } # -> card 2 (text)
+- extendedWaitUntil: { visible: "Federal Student", timeout: 15000 }
+- assertNotVisible: "Open Website" # text page has no action button

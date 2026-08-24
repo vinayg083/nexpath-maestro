@@ -1,0 +1,11 @@
+# Suite 4 / Case 1 - Let's Go (Welcome -> first onboarding step).
+appId: ${APP_ID}
+---
+- launchApp: { clearState: true }
+- extendedWaitUntil:
+    visible: "Reentry Roadmap"
+    timeout: 30000
+- tapOn: "Let's Go!"
+- extendedWaitUntil:
+    visible: "Tell us about yourself"
+    timeout: 20000

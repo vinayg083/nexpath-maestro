@@ -1,0 +1,12 @@
+# S5C1 - Pick up to 3 goals and continue.
+appId: ${APP_ID}
+---
+- runFlow: ../helpers/reach-step2.yaml
+- tapOn: "Acamedics"
+- scrollUntilVisible:
+    element:
+      text: "Transportation"
+    direction: DOWN
+- tapOn: "Transportation"
+- tapOn: "Next"
+- extendedWaitUntil: { visible: "Need immediate help?", timeout: 20000 }

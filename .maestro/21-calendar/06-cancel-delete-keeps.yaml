@@ -1,0 +1,8 @@
+# S21C6 - Cancelling a delete leaves the appointment untouched.
+appId: ${APP_ID}
+---
+- runFlow: ../helpers/create-appointment.yaml
+- tapOn: "Delete Court Date"
+- extendedWaitUntil: { visible: "Delete reminder?", timeout: 10000 }
+- tapOn: "Cancel"
+- assertVisible: "Court Date"

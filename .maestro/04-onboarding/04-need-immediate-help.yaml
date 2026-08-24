@@ -1,0 +1,5 @@
+# S4C4 - Need Immediate Help? (Onboarding Step 3 title).
+appId: ${APP_ID}
+---
+- runFlow: ../helpers/reach-step3.yaml
+- assertVisible: "Need immediate help?"

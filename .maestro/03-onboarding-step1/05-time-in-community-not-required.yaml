@@ -1,0 +1,15 @@
+# S3C5 - Community duration is now REQUIRED (app behavior flipped: the field used to
+# be optional; the updated code blocks Next until it's picked). Filename kept stable
+# for the case mapping, but the assertion now matches the new required behavior.
+appId: ${APP_ID}
+---
+- runFlow: ../helpers/reach-step1.yaml
+- tapOn: "Month"
+- tapOn: "Done"
+- tapOn: "Select a state"
+- tapOn: "California"
+- assertVisible: "California"
+# Leave "How long have you been in the community?" empty and try to continue.
+- tapOn: "Next"
+- assertVisible: "Select how long you've been in the community."
+- assertNotVisible: "Get Started"

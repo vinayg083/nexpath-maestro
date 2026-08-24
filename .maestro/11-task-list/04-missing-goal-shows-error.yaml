@@ -1,0 +1,8 @@
+# S11C4 - A missing goal (bad deep link) is handled gracefully, not a crash.
+appId: ${APP_ID}
+---
+- launchApp: { clearState: true }
+- extendedWaitUntil: { visible: "Reentry Roadmap", timeout: 45000 }
+- openLink: "nexpath:///path/00000000-0000-0000-0000-000000000000"
+- tapOn: { text: "Open", optional: true }
+- extendedWaitUntil: { visible: "There are no tasks for this category yet.", timeout: 15000 }

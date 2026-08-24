@@ -1,0 +1,8 @@
+# S15C4 - Website resource shows an "Open Website" action (Transportation -> Task 1).
+appId: ${APP_ID}
+---
+- runFlow: ../helpers/complete-onboarding.yaml
+- tapOn: "Transportation.*"
+- tapOn: "Task 1(,.*)?"
+- tapOn: "Let's Go!"
+- extendedWaitUntil: { visible: "Open Website", timeout: 15000 }

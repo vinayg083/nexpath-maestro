@@ -1,0 +1,10 @@
+# S22C3 - Cancelling the confirmation never deletes anything.
+appId: ${APP_ID}
+---
+- runFlow: ../helpers/complete-onboarding.yaml
+- tapOn: "More(, tab.*)?"
+- tapOn: "Delete account"
+- assertVisible: "Delete account?"
+- assertVisible: "Are you sure you want to delete your account? This cannot be undone."
+- tapOn: "Cancel"
+- assertVisible: "Delete account"

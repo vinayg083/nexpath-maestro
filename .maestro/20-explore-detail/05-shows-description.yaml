@@ -1,0 +1,7 @@
+# S20C5 - The category detail shows its description text (Housing subtitle).
+appId: ${APP_ID}
+---
+- runFlow: ../helpers/complete-onboarding.yaml
+- tapOn: "Explore More"
+- tapOn: "Housing,.*"
+- assertVisible: "Testing.*"

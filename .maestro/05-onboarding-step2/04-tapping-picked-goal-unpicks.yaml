@@ -1,0 +1,9 @@
+# S5C4 - Tapping a picked goal again un-picks it.
+# Pick then unpick Acamedics; with nothing selected, Next is blocked -> proves unpicked.
+appId: ${APP_ID}
+---
+- runFlow: ../helpers/reach-step2.yaml
+- tapOn: "Acamedics"
+- tapOn: "Acamedics"
+- tapOn: "Next"
+- assertVisible: "Select at least 1 area to continue."

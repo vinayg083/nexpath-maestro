@@ -1,0 +1,9 @@
+# S13C1 - Marking a task done saves it and returns you to the list.
+appId: ${APP_ID}
+---
+- runFlow: ../helpers/complete-onboarding.yaml
+- tapOn: "Acamedics.*"
+- tapOn: "Undergrad.*"
+- extendedWaitUntil: { visible: "Mark as completed", timeout: 15000 }
+- tapOn: "Mark as completed"
+- extendedWaitUntil: { visible: "Acamedics", timeout: 15000 }

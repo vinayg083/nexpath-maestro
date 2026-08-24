@@ -1,0 +1,9 @@
+# S5C2 - A 4th pick is blocked with a clear message.
+appId: ${APP_ID}
+---
+- runFlow: ../helpers/reach-step2.yaml
+- tapOn: "Acamedics"
+- tapOn: "Employment & Career"
+- tapOn: "Healthcare & Wellness"
+- tapOn: "Housing"
+- assertVisible: "You can select at most 3 onboarding priorities"

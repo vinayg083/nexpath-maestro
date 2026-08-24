@@ -1,0 +1,22 @@
+# Suite 25 / Case 7 - Closing the app mid-onboarding starts over, not halfway.
+appId: ${APP_ID}
+---
+# Begin onboarding (fresh install).
+- launchApp: { clearState: true }
+- extendedWaitUntil:
+    visible: "Reentry Roadmap"
+    timeout: 30000
+- tapOn: "Let's Go!"
+- extendedWaitUntil:
+    visible: "Tell us about yourself"
+    timeout: 20000
+
+# Kill and relaunch WITHOUT clearing state.
+- stopApp
+- launchApp
+# Onboarding was never completed, so routing sends us back to Welcome,
+# not back into the middle of onboarding.
+- extendedWaitUntil:
+    visible: "Reentry Roadmap"
+    timeout: 30000
+- assertNotVisible: "Tell us about yourself"
