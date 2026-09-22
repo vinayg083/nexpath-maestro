@@ -63,6 +63,7 @@ export default function MoreScreen() {
             />
           </Pressable>
         </View>
+        <Text className="mt-3 px-6 text-sm leading-5 text-muted-foreground">Version 1.0</Text>
       </SafeAreaView>
 
       <AlertDialog
