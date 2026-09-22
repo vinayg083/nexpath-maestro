@@ -54,7 +54,7 @@ export default function MoreScreen() {
               setConfirmOpen(true);
             }}
           >
-            <Text className="text-h6 leading-5 text-destructive">Delete account</Text>
+            <Text className="text-h6 leading-5 text-destructive">Remove my account</Text>
             <LucideIcon
               color={colors.mutedForeground}
               name="ChevronRight"
@@ -83,7 +83,7 @@ export default function MoreScreen() {
           <AlertDialogHeader>
             <AlertDialogTitle>Delete account?</AlertDialogTitle>
             <AlertDialogDescription className="text-base leading-6">
-              Are you sure you want to delete your account? This cannot be undone.
+              This permanently removes your NexPath data.
             </AlertDialogDescription>
           </AlertDialogHeader>
 
